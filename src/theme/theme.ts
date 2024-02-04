@@ -16,7 +16,7 @@ export const theme = createTheme({
       fontFamily: "tungstenBold",
       color: ColorsEnum.primary,
       textTransform: "uppercase",
-      fontSize: "10rem",
+      fontSize: "10rem", //TODO: Make font size responsive
     },
     h2: {
       fontFamily: "DINNextW1G-Regular",

@@ -6,7 +6,7 @@ import React, {
   useState,
 } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -18,6 +18,8 @@ import "./styles.css";
 // import required modules
 import { EffectCoverflow } from "swiper/modules";
 import { IAgent } from "../../types";
+import { Box } from "@mui/material";
+import { ColorsEnum } from "../../theme/theme";
 
 type Props = {
   agents: IAgent[];
@@ -51,7 +53,23 @@ export const CharacterSwiper: React.FC<Props> = ({
       >
         {agents.map((agent) => (
           <SwiperSlide key={agent.name}>
-            <img src={agent.displayIcon} />
+            <Box
+              sx={{
+                border: `3px solid white`,
+                borderRadius: "10px",
+              }}
+            >
+              <Box
+                sx={{
+                  borderRadius: "10px",
+                }}
+              >
+                <img
+                  src={agent.displayIcon}
+                  style={{ borderRadius: "10px", overflow: "hidden" }}
+                />
+              </Box>
+            </Box>
           </SwiperSlide>
         ))}
       </Swiper>
