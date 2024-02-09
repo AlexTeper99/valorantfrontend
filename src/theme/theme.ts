@@ -1,3 +1,4 @@
+import { themeBaseDefaults } from ".";
 import "../index.css";
 
 export enum ColorsEnum {
@@ -8,15 +9,20 @@ export enum ColorsEnum {
   borderColor = "#5f605f",
 }
 
-import { createTheme } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material";
+import { breakpointVal } from "../styles";
+const fontSize = (from: number, to: number) =>
+  breakpointVal("fontSize", from, to, themeBaseDefaults.breakpoints.values);
 
 export const theme = createTheme({
   typography: {
     h1: {
+      ...fontSize(40, 60),
       fontFamily: "tungstenBold",
       color: ColorsEnum.primary,
       textTransform: "uppercase",
-      fontSize: "10rem", //TODO: Make font size responsive
+
+      //fontSize: "60px"
     },
     h2: {
       fontFamily: "DINNextW1G-Regular",

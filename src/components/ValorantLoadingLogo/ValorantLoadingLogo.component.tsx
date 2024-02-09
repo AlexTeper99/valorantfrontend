@@ -1,3 +1,5 @@
+import React from "react";
+
 export const ValorantLoadingLogo = (props: any) => (
   <svg
     width="100"
