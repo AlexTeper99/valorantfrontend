@@ -37,7 +37,8 @@ export const Home: React.FC = () => {
           height={"100%"}
           justifyContent="space-between"
         >
-          <MainContent />
+          {currentAgent && <MainContent agent={currentAgent} />}
+
           <Box>
             <CharacterSwiper
               agents={agents}

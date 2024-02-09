@@ -1,55 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Typography } from "@mui/material";
+import { IAgent } from "../../types";
 
-interface Props {}
+interface Props {
+  agent: IAgent;
+}
 
-export const MainContent: React.FC<Props> = () => {
+export const MainContent: React.FC<Props> = ({ agent }) => {
+  useEffect(() => {
+    console.log(agent, "agent");
+  }, [agent]);
+
   return (
     <Box
       sx={{
         height: "100%",
       }}
     >
-      <Typography variant="h1">Main Content</Typography>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gridAutoRows: "auto",
+          height: "100%",
+          justifyItems: "center",
+        }}
+      >
+        <img
+          src={agent.background}
+          alt={`${agent.name} background`}
+          className="characterImg"
+          style={{
+            opacity: "0.8",
+            zIndex: 1,
+          }}
+        />
+
+        <img
+          src={agent.image}
+          alt={`${agent.name} image`}
+          className="characterImg"
+          style={{
+            zIndex: 2,
+          }}
+        />
+      </Box>
     </Box>
   );
 };
-
-//   <Box
-//           height={"100%"}
-//           sx={{
-//             backgroundImage: {
-//               sm: "none",
-//               md: `url(${currentAgent?.background})`,
-//             },
-//             backgroundPosition: { sm: "center", md: "left" },
-//             backgroundRepeat: "no-repeat",
-//             backgroundColor: "hsla(0,0%,4%,0.3)",
-//             backgroundSize: { sm: "100%", md: "auto" },
-//           }}
-//         >
-//           <Box display="flex" flexDirection="column" height="100%" width="100%">
-//             <Box
-//               display="flex"
-//               flexGrow={1}
-//               sx={{ height: `calc(100% - 160px)` }}
-//             >
-//               <Box
-//                 component="img"
-//                 src={currentAgent?.image}
-//                 alt={currentAgent?.name}
-//                 sx={{
-//                   backgroundImage: {
-//                     xs: `url(${currentAgent?.background})`,
-//                     md: "none",
-//                   },
-//                   backgroundPosition: "center",
-//                   backgroundRepeat: "no-repeat",
-//                   backgroundSize: { xs: "100%", md: "auto" },
-
-//                   height: "100%",
-//                   maxWidth: "100vw",
-//                   objectFit: "contain",
-//                 }}
-//               />
-//             </Box>

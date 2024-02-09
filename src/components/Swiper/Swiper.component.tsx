@@ -30,6 +30,9 @@ export const CharacterSwiper: React.FC<Props> = ({
   agents,
   setCurrentAgent,
 }) => {
+  const ref = useRef(null);
+  const [height, setHeight] = useState(0);
+
   return (
     <>
       <Swiper

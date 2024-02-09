@@ -9,6 +9,16 @@
   user-select: none;
 }
 
+.characterImg {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 90vw;
+  max-height: 80vh;
+}
+
 .swiper-slide {
   background-position: center;
   background-size: cover;
@@ -25,6 +35,10 @@
   .swiper-slide {
     width: 15dvw;
   }
+
+  /* .characterImg {
+    max-width: calc(85vw);
+  } */
 }
 
 @media (width > 600px) {
@@ -32,6 +46,10 @@
     min-width: 120px;
     width: 8dvw;
   }
+
+  /* .characterImg {
+    max-width: calc(92vw);
+  } */
 }
 
 .swiper-slide img {
