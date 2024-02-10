@@ -34,7 +34,6 @@ export const Home: React.FC = () => {
         <Box
           display="flex"
           flexDirection="column"
-          height={"100%"}
           justifyContent="space-between"
         >
           {currentAgent && <MainContent agent={currentAgent} />}

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { IAgent } from "../../types";
 
 interface Props {
@@ -17,34 +17,61 @@ export const MainContent: React.FC<Props> = ({ agent }) => {
         height: "100%",
       }}
     >
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gridAutoRows: "auto",
-          height: "100%",
-          justifyItems: "center",
-        }}
-      >
-        <img
-          src={agent.background}
-          alt={`${agent.name} background`}
-          className="characterImg"
-          style={{
-            opacity: "0.8",
-            zIndex: 1,
-          }}
-        />
+      <Grid container height={"100%"}>
+        <Grid item xs={12} md={6}>
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gridAutoRows: "auto",
+              height: "100%",
+              justifyItems: "center",
+            }}
+          >
+            <img
+              src={agent.background}
+              alt={`${agent.name} background`}
+              className="characterImg"
+              style={{
+                opacity: "0.8",
+                zIndex: 1,
+              }}
+            />
 
-        <img
-          src={agent.image}
-          alt={`${agent.name} image`}
-          className="characterImg"
-          style={{
-            zIndex: 2,
-          }}
-        />
-      </Box>
+            <img
+              src={agent.image}
+              alt={`${agent.name} image`}
+              className="characterImg"
+              style={{
+                zIndex: 2,
+              }}
+            />
+          </Box>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Box
+            width="100%"
+            height="100%"
+            sx={{ backgroundColor: "red", opacity: "0.5" }}
+          >
+            <Typography variant="h1">
+              Player skills and abilities will be displayed here
+            </Typography>
+            <Typography variant="h1">
+              Player skills and abilities will be displayed here
+            </Typography>
+            <Typography variant="h1">
+              Player skills and abilities will be displayed here
+            </Typography>
+            <Typography variant="h1">
+              Player skills and abilities will be displayed here
+            </Typography>
+            <Typography variant="h1">
+              Player skills and abilities will be displayed here
+            </Typography>
+          </Box>
+        </Grid>
+      </Grid>
     </Box>
   );
 };
