@@ -22,7 +22,7 @@ export const Home: React.FC = () => {
     <Box
       sx={{
         overflowY: "auto",
-        height: "100vh",
+        minHeight: "100vh",
         background: `linear-gradient(45deg, #${currentAgent?.backgroundGradientColors[0]} 0%, #${currentAgent?.backgroundGradientColors[3]} 100%);`,
       }}
     >

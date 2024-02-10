@@ -33,7 +33,7 @@ export const MainContent: React.FC<Props> = ({ agent }) => {
               alt={`${agent.name} background`}
               className="characterImg"
               style={{
-                opacity: "0.8",
+                opacity: "0.5",
                 zIndex: 1,
               }}
             />
