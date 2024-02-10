@@ -1,10 +1,4 @@
-import React, {
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { Dispatch, SetStateAction } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -30,9 +24,6 @@ export const CharacterSwiper: React.FC<Props> = ({
   agents,
   setCurrentAgent,
 }) => {
-  const ref = useRef(null);
-  const [height, setHeight] = useState(0);
-
   return (
     <>
       <Swiper

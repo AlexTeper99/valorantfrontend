@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import { IAgent } from "../../types";
 
 interface Props {
@@ -12,11 +12,7 @@ export const MainContent: React.FC<Props> = ({ agent }) => {
   }, [agent]);
 
   return (
-    <Box
-      sx={{
-        height: "100%",
-      }}
-    >
+    <Box zIndex="1">
       <Grid container height={"100%"}>
         <Grid item xs={12} md={6}>
           <Box
@@ -49,25 +45,20 @@ export const MainContent: React.FC<Props> = ({ agent }) => {
           </Box>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Box
-            width="100%"
-            height="100%"
-            sx={{ backgroundColor: "red", opacity: "0.5" }}
-            maxHeight="100%"
+          <Stack
+            px={{ xs: "5%", md: "10%" }}
+            py={{ xs: "5%", md: "10%" }}
+            justifyContent={{ xs: "center", md: "flex-start" }}
+            alignItems={{ xs: "center", md: "flex-start" }}
           >
-            <Typography variant="h1">
-              Player skills and abilities will be displayed here
+            <Typography variant="subtitle1" mb={"-10px"}>
+              {agent.rol}
             </Typography>
-            <Typography variant="h1">
-              Player skills and abilities will be displayed here
+            <Typography variant="h1">{agent.name}</Typography>
+            <Typography variant="subtitle1" mb={"-10px"}>
+              {agent.bio}
             </Typography>
-            <Typography variant="h1">
-              Player skills and abilities will be displayed here
-            </Typography>
-            <Typography variant="h1">
-              Player skills and abilities will be displayed here
-            </Typography>
-          </Box>
+          </Stack>
         </Grid>
       </Grid>
     </Box>

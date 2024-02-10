@@ -22,6 +22,7 @@ export const Home: React.FC = () => {
     <Box
       sx={{
         overflowY: "auto",
+        overflowX: "hidden",
         minHeight: "100vh",
         background: `linear-gradient(45deg, #${currentAgent?.backgroundGradientColors[0]} 0%, #${currentAgent?.backgroundGradientColors[3]} 100%);`,
       }}
@@ -39,7 +40,14 @@ export const Home: React.FC = () => {
         >
           {currentAgent && <MainContent agent={currentAgent} />}
 
-          <Box>
+          <Box
+            sx={{
+              position: { xs: "relative", md: "absolute" },
+              bottom: { xs: "0", md: "20px" },
+
+              alignSelf: { xs: "center", md: "flex-end" },
+            }}
+          >
             <CharacterSwiper
               agents={agents}
               setCurrentAgent={setcurrentAgent}

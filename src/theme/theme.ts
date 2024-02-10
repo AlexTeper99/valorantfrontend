@@ -15,6 +15,7 @@ const fontSize = (from: number, to: number) =>
   breakpointVal("fontSize", from, to, themeBaseDefaults.breakpoints.values);
 
 export const theme = createTheme({
+  breakpoints: themeBaseDefaults.breakpoints,
   typography: {
     h1: {
       ...fontSize(60, 90),
