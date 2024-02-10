@@ -9,7 +9,7 @@ export enum ColorsEnum {
   borderColor = "#5f605f",
 }
 
-import { createTheme, responsiveFontSizes } from "@mui/material";
+import { createTheme } from "@mui/material";
 import { breakpointVal } from "../styles";
 const fontSize = (from: number, to: number) =>
   breakpointVal("fontSize", from, to, themeBaseDefaults.breakpoints.values);
@@ -17,16 +17,32 @@ const fontSize = (from: number, to: number) =>
 export const theme = createTheme({
   typography: {
     h1: {
-      ...fontSize(40, 60),
+      ...fontSize(60, 90),
       fontFamily: "tungstenBold",
       color: ColorsEnum.primary,
       textTransform: "uppercase",
     },
-    h2: {
+    subtitle1: {
+      ...fontSize(15, 20),
       fontFamily: "DINNextW1G-Regular",
       color: "white",
       textTransform: "uppercase",
-      fontSize: "2rem",
+      letterSpacing: "0.05em",
+      fontWeight: "lighter",
+    },
+
+    h3: {
+      fontFamily: "DINNextW1G-Regular",
+      color: "white",
+      textTransform: "uppercase",
+      ...fontSize(20, 30),
+      fontWeight: "lighter",
+    },
+    body1: {
+      fontFamily: "DINNextW1G-Regular",
+      color: "white",
+      textTransform: "uppercase",
+      ...fontSize(20, 30),
     },
   },
 });
