@@ -46,7 +46,7 @@ export const MainContent: React.FC<Props> = ({ agent }) => {
         </Grid>
         <Grid item xs={12} md={6}>
           <Stack
-            px={{ xs: "5%", md: "10%" }}
+            px="5%"
             py={{ xs: "5%", md: "10%" }}
             justifyContent={{ xs: "center", md: "flex-start" }}
             alignItems={{ xs: "center", md: "flex-start" }}
