@@ -53,10 +53,8 @@ export const MainContent: React.FC<Props> = ({ agent }) => {
             width="100%"
             height="100%"
             sx={{ backgroundColor: "red", opacity: "0.5" }}
+            maxHeight="100%"
           >
-            <Typography variant="h1">
-              Player skills and abilities will be displayed here
-            </Typography>
             <Typography variant="h1">
               Player skills and abilities will be displayed here
             </Typography>
