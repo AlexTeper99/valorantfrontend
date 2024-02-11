@@ -1,4 +1,3 @@
-import { themeBaseDefaults } from ".";
 import "../index.css";
 
 export enum ColorsEnum {
@@ -12,16 +11,37 @@ export enum ColorsEnum {
 import { createTheme } from "@mui/material";
 import { breakpointVal } from "../styles";
 const fontSize = (from: number, to: number) =>
-  breakpointVal("fontSize", from, to, themeBaseDefaults.breakpoints.values);
+  breakpointVal("fontSize", from, to, {
+    xs: 0,
+    sm: 600,
+    md: 960,
+    lg: 1200,
+    xl: 1536,
+  });
 
 export const theme = createTheme({
-  breakpoints: themeBaseDefaults.breakpoints,
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
   typography: {
     h1: {
       ...fontSize(60, 90),
       fontFamily: "tungstenBold",
       color: ColorsEnum.primary,
       textTransform: "uppercase",
+    },
+    h2: {
+      ...fontSize(20, 25),
+      fontFamily: "tungstenBold",
+      textTransform: "uppercase",
+      color: "white",
+      letterSpacing: "1px",
     },
     subtitle1: {
       ...fontSize(15, 20),
@@ -31,6 +51,17 @@ export const theme = createTheme({
       letterSpacing: "0.05em",
       fontWeight: "lighter",
     },
+    body1: {
+      ...fontSize(15, 20),
+      fontFamily: "DINNextW1G-Regular",
+      color: "red",
+      fontWeight: "bold",
+      // fontWeight: "lighter",
+    },
+    body2: {
+      ...fontSize(15, 20),
+      fontFamily: "DINNextW1G-Regular",
+    },
 
     h3: {
       fontFamily: "DINNextW1G-Regular",
@@ -38,12 +69,6 @@ export const theme = createTheme({
       textTransform: "uppercase",
       ...fontSize(20, 30),
       fontWeight: "lighter",
-    },
-    body1: {
-      fontFamily: "DINNextW1G-Regular",
-      color: "white",
-      textTransform: "uppercase",
-      ...fontSize(20, 30),
     },
   },
 });
