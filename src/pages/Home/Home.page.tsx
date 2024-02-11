@@ -42,9 +42,10 @@ export const Home: React.FC = () => {
 
           <Box
             sx={{
-              position: { xs: "relative", md: "absolute" },
-              bottom: { xs: "0", md: "20px" },
+              // position: { xs: "relative", md: "absolute" },
+              // bottom: { xs: "0", md: "20px" },
 
+              position: "relative",
               alignSelf: { xs: "center", md: "flex-end" },
             }}
           >

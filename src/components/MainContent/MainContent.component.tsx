@@ -10,7 +10,12 @@ interface Props {
 export const MainContent: React.FC<Props> = ({ agent }) => {
   return (
     <Box zIndex="1">
-      <Grid container height={"100%"}>
+      <Grid
+        container
+        height={"100%"}
+        justifyContent="center"
+        alignItems="center"
+      >
         <Grid item xs={12} md={6}>
           <Box
             sx={{
@@ -43,7 +48,7 @@ export const MainContent: React.FC<Props> = ({ agent }) => {
           </Box>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Box px="5%" py={{ xs: "5%", md: "10%" }}>
+          <Box mx="5%" my={{ xs: "5%", md: "20px" }}>
             {agent ? <CharacterDescription agent={agent} /> : null}
           </Box>
         </Grid>

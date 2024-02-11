@@ -71,7 +71,7 @@ export const CharacterDescription: React.FC<Props> = ({ agent }) => {
           ))}
       </Stack>
 
-      <Box my={"10px"} minHeight={{ xs: "250px", md: "132px" }}>
+      <Box my={"10px"} minHeight={{ xs: "250px", md: "none" }}>
         {agent && skillSelected === -1 ? (
           <Typography variant="body1" color={ColorsEnum.primary}>
             {agent.bio}
