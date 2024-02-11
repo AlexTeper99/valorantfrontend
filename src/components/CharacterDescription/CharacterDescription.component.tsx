@@ -2,6 +2,7 @@ import { Box, Card, CardActionArea, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { IAgent } from "../../types";
 import { ColorsEnum } from "../../theme";
+import { DefaultIcon } from "..";
 
 interface Props {
   agent: IAgent;
@@ -45,14 +46,23 @@ export const CharacterDescription: React.FC<Props> = ({ agent }) => {
               key={i}
               onClick={() => setskillSelected(i)}
             >
-              <Box
-                key={i}
-                component="img"
-                src={skill.icon}
-                width={{ xs: "40px", md: "60px" }}
-                minWidth={{ xs: "40px", md: "60px" }}
-                sx={{ opacity: skillSelected === i ? 1 : 0.5 }}
-              />
+              {skill.icon ? (
+                <Box
+                  key={i}
+                  component="img"
+                  src={skill.icon}
+                  width={{ xs: "40px", md: "60px" }}
+                  minWidth={{ xs: "40px", md: "60px" }}
+                  sx={{ opacity: skillSelected === i ? 1 : 0.5 }}
+                />
+              ) : (
+                <DefaultIcon
+                  skillSelected={skillSelected}
+                  i={i}
+                  width={{ xs: "40px", md: "60px" }}
+                  height={{ xs: "40px", md: "60px" }}
+                />
+              )}
             </CardActionArea>
           ))}
       </Stack>
