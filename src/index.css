@@ -1,9 +1,17 @@
 @font-face {
   font-family: tungstenBold;
-  src: url("./fonts/Tungsten-Font/@font-face/561f38b1f4570de0fb8a39d691ab058c.ttf");
-  src: url("./fonts/Tungsten-Font/@font-face/561f38b1f4570de0fb8a39d691ab058c.eot");
-  src: url("./fonts/Tungsten-Font/@font-face/561f38b1f4570de0fb8a39d691ab058c.woff");
-  src: url("./fonts/Tungsten-Font/@font-face/561f38b1f4570de0fb8a39d691ab058c.woff2");
+
+  src: url("https://db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot");
+  src: url("https://db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/561f38b1f4570de0fb8a39d691ab058c.svg#Tungsten-Bold")
+      format("svg");
 }
 
 @font-face {
