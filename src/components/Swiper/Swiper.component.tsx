@@ -50,19 +50,9 @@ export const CharacterSwiper: React.FC<Props> = ({
             <Box
               sx={{
                 border: `3px solid white`,
-                borderRadius: "10px",
               }}
             >
-              <Box
-                sx={{
-                  borderRadius: "10px",
-                }}
-              >
-                <img
-                  src={agent.displayIcon}
-                  style={{ borderRadius: "10px", overflow: "hidden" }}
-                />
-              </Box>
+              <img src={agent.displayIcon} style={{ overflow: "hidden" }} />
             </Box>
           </SwiperSlide>
         ))}
