@@ -1,5 +1,5 @@
 import { Box, Card, CardActionArea, Stack, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IAgent } from "../../types";
 import { ColorsEnum } from "../../theme";
 import { DefaultIcon } from "..";
@@ -10,6 +10,10 @@ interface Props {
 
 export const CharacterDescription: React.FC<Props> = ({ agent }) => {
   const [skillSelected, setskillSelected] = useState<number>(-1);
+
+  useEffect(() => {
+    setskillSelected(-1);
+  }, [agent]);
 
   return (
     <Stack
@@ -68,13 +72,15 @@ export const CharacterDescription: React.FC<Props> = ({ agent }) => {
       </Stack>
 
       <Box my={"10px"} minHeight={{ xs: "250px", md: "132px" }}>
-        {agent && agent.skills.length > 0 && skillSelected === -1 ? (
+        {agent && skillSelected === -1 ? (
           <Typography variant="body1" color={ColorsEnum.primary}>
             {agent.bio}
           </Typography>
         ) : (
           <Typography variant="body1" color={ColorsEnum.primary}>
-            {agent.skills[skillSelected].description}
+            {agent.skills.at(skillSelected)
+              ? agent.skills[skillSelected].description
+              : "No description"}
           </Typography>
         )}
       </Box>
