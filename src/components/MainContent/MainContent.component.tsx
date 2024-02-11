@@ -28,6 +28,7 @@ export const MainContent: React.FC<Props> = ({ agent }) => {
               style={{
                 opacity: "0.5",
                 zIndex: 1,
+                minHeight: "calc(100vh - 200px)",
               }}
             />
 

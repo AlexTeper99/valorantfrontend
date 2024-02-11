@@ -19,7 +19,10 @@ export const CharacterDescription: React.FC<Props> = ({ agent }) => {
         {agent.rol}
       </Typography>
       <CardActionArea
-        sx={{ mt: "5px", textAlign: { xs: "center", md: "initial" } }}
+        sx={{
+          mt: "5px",
+          textAlign: { xs: "center", md: "initial" },
+        }}
       >
         <Typography
           variant="h1"
@@ -46,27 +49,25 @@ export const CharacterDescription: React.FC<Props> = ({ agent }) => {
                 key={i}
                 component="img"
                 src={skill.icon}
-                width="40px"
+                width={{ xs: "40px", md: "60px" }}
+                minWidth={{ xs: "40px", md: "60px" }}
                 sx={{ opacity: skillSelected === i ? 1 : 0.5 }}
               />
             </CardActionArea>
           ))}
       </Stack>
 
-      {agent && agent.skills.length > 0 && skillSelected === -1 ? (
-        <Typography variant="body1" color={ColorsEnum.primary}>
-          {agent.bio}
-        </Typography>
-      ) : (
-        <Typography variant="body1" color={ColorsEnum.primary}>
-          {agent.skills[skillSelected].description}
-        </Typography>
-      )}
-
-      {/* <Typography variant="body2" color={ColorsEnum.primary}>
-        {agent.bio}
-      </Typography> */}
-      {/* <Typography variant="h2">{agent.rol}</Typography> */}
+      <Box my={"10px"}>
+        {agent && agent.skills.length > 0 && skillSelected === -1 ? (
+          <Typography variant="body1" color={ColorsEnum.primary}>
+            {agent.bio}
+          </Typography>
+        ) : (
+          <Typography variant="body1" color={ColorsEnum.primary}>
+            {agent.skills[skillSelected].description}
+          </Typography>
+        )}
+      </Box>
     </Stack>
   );
 };

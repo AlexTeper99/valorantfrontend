@@ -31,12 +31,14 @@ export const theme = createTheme({
   },
   typography: {
     h1: {
+      fontSize: "60px",
       ...fontSize(60, 90),
       fontFamily: "tungstenBold",
       color: ColorsEnum.primary,
       textTransform: "uppercase",
     },
     h2: {
+      fontSize: "20px",
       ...fontSize(20, 25),
       fontFamily: "tungstenBold",
       textTransform: "uppercase",
@@ -44,6 +46,7 @@ export const theme = createTheme({
       letterSpacing: "1px",
     },
     subtitle1: {
+      fontSize: "15px",
       ...fontSize(15, 20),
       fontFamily: "DINNextW1G-Regular",
       color: "white",
@@ -52,18 +55,21 @@ export const theme = createTheme({
       fontWeight: "lighter",
     },
     body1: {
-      ...fontSize(15, 20),
+      ...fontSize(15, 22),
+
       fontFamily: "DINNextW1G-Regular",
       color: "red",
       fontWeight: "bold",
       // fontWeight: "lighter",
     },
     body2: {
+      fontSize: "15px",
       ...fontSize(15, 20),
       fontFamily: "DINNextW1G-Regular",
     },
 
     h3: {
+      fontSize: "20px",
       fontFamily: "DINNextW1G-Regular",
       color: "white",
       textTransform: "uppercase",

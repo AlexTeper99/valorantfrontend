@@ -40,7 +40,7 @@
 @media (width > 600px) {
   .swiper-slide {
     min-width: 120px;
-    width: 8dvw;
+    width: 7dvw;
   }
 
   .characterImg {
